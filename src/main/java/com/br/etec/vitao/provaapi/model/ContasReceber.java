@@ -1,7 +1,8 @@
-package com.br.etec.vitao.provaapi.MODEL;
+package com.br.etec.vitao.provaapi.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -10,30 +11,36 @@ import java.util.Objects;
 public class ContasReceber {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private Date dataConta;
+    private Long id;
+    private LocalDate dataconta;
+    private BigDecimal valorconta;
 
     @ManyToOne
     @JoinColumn(name = "idcliente")
     private Cliente cliente;
 
-    private BigDecimal valorConta;
-
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Date getDataConta() {
-        return dataConta;
+    public LocalDate getDataconta() {
+        return dataconta;
     }
 
-    public void setDataConta(Date dataConta) {
-        this.dataConta = dataConta;
+    public void setDataconta(LocalDate dataconta) {
+        this.dataconta = dataconta;
+    }
+
+    public BigDecimal getValorconta() {
+        return valorconta;
+    }
+
+    public void setValorconta(BigDecimal valorconta) {
+        this.valorconta = valorconta;
     }
 
     public Cliente getCliente() {
@@ -42,14 +49,6 @@ public class ContasReceber {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-
-    public BigDecimal getValorConta() {
-        return valorConta;
-    }
-
-    public void setValorConta(BigDecimal valorConta) {
-        this.valorConta = valorConta;
     }
 
     @Override

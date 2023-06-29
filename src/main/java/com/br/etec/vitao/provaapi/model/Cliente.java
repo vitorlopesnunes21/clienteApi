@@ -1,4 +1,4 @@
-package com.br.etec.vitao.provaapi.MODEL;
+package com.br.etec.vitao.provaapi.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,29 +10,34 @@ import java.util.Objects;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private int id;
-
-    private String nomeCliente;
+    private Long id;
+    private String nomecliente;
 
     @OneToMany(mappedBy = "cliente")
     private List<ContasReceber> clientescontasReceber = new ArrayList<>();
 
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getNomeCliente() {
-        return nomeCliente;
+    public String getNomecliente() {
+        return nomecliente;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setNomecliente(String nomecliente) {
+        this.nomecliente = nomecliente;
+    }
+
+    public List<ContasReceber> getClientescontasReceber() {
+        return clientescontasReceber;
+    }
+
+    public void setClientescontasReceber(List<ContasReceber> clientescontasReceber) {
+        this.clientescontasReceber = clientescontasReceber;
     }
 
     @Override
