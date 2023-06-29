@@ -37,6 +37,5 @@ public class ContasReceberDTO {
     public void setDataconta(LocalDate dataconta) {
         this.dataconta = dataconta;
     }
-
-
+    
 }
