@@ -35,7 +35,7 @@ public class ContasReceberRepositoryImpl implements ContasReceberRepositoryQuery
 
         Predicate[] predicates = createRestrictions(contasReceberFilter, builder, root);
         criteria.where(predicates);
-        criteria.orderBy(builder.asc(root.get("cliente").get("nome")));
+        criteria.orderBy(builder.asc(root.get("cliente").get("nomecliente")));
 
         TypedQuery<ContasReceberDTO> query = manager.createQuery(criteria);
         adicionarRestricaoDePaginacao(query, pageable);

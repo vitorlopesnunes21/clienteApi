@@ -1,5 +1,7 @@
 package com.br.etec.vitao.provaapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,7 @@ public class Cliente {
     private String nomecliente;
 
     @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
     private List<ContasReceber> clientescontasReceber = new ArrayList<>();
 
     public Long getId() {
